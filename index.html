@@ -2,4 +2,45 @@
 layout: default
 ---
 
-<img src="public/images/hurhree.jpg" width="100%"> </img>
+<style type="text/css">
+    .parallaxParent {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .parallaxParent > * {
+        height: 200%;
+        position: relative;
+        top: -100%;
+    }
+</style>
+
+<div class="spacer s0"></div>
+<div id="parallax1" class="parallaxParent">
+    <div style="background-image: url(public/images/merged.jpg);
+    background-repeat: no-repeat;">
+    </div>
+</div>
+<div class="spacer s1">
+    <div class="box2 blue">
+        <p>Arvan jiliin neg angiin huuhduud yumsanjeee</p>
+    </div>
+</div>
+<!-- <div class="spacer s0"></div> -->
+<div id="parallax2" class="parallaxParent">
+    <div style="background-image: url(public/images/hurhree.jpg);
+        background-repeat: no-repeat;">
+        </div>
+</div>
+<script>
+    // init controller
+    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+    // build scenes
+    new ScrollMagic.Scene({triggerElement: "#parallax1"})
+                    .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+                    .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax2"})
+                    .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+                    .addTo(controller);
+</script>

@@ -1,0 +1,10 @@
+.top-box{
+    top: 0px;
+    width: 100%;
+}
+.top-message{
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    width: 200px;
+    text-align: left;
+}
